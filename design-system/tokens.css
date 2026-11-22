@@ -1,0 +1,98 @@
+/* Kadoo Academy — Design System (fonte: Figma "Sem título", páginas 04 Fundamentos e 10 Movimento)
+   Primitivos guardam o valor bruto; o Tema dá o papel de cada cor (Claro / Escuro).
+   Componentes usam SÓ variáveis do Tema. */
+
+:root {
+  /* ---------- Primitivos: paleta da marca ---------- */
+  --kd-off-white: #F5F5ED;
+  --kd-azul-claro: #CBE8FA;
+  --kd-laranja: #FA4C03;
+  --kd-vinho: #450102;
+  --kd-escuro: #22161C;      /* substitui o grafite */
+  --kd-cobalto: #2F5BEA;     /* substitui o marrom */
+  --kd-noite: #12093E;
+
+  /* Escalas derivadas */
+  --kd-laranja-200: #FFC2A0; --kd-laranja-300: #FFA06E; --kd-laranja-400: #FF7A3D;
+  --kd-laranja-500: #FA4C03; --kd-laranja-600: #C83A00; --kd-laranja-800: #9E2E00;
+  --kd-ambar: #FFA31A; --kd-amarelo: #FFC21A;
+  --kd-cobalto-300: #6F8FF5; --kd-cobalto-700: #2347C2; --kd-cobalto-800: #1C3A9E; --kd-cobalto-900: #142C7A;
+  --kd-neutro-0: #FFFFFF; --kd-neutro-100: #E2DFD4; --kd-neutro-200: #D3CEC1; --kd-neutro-300: #CBC5B6;
+  --kd-neutro-500: #7A6E73; --kd-neutro-600: #6F6368; --kd-neutro-700: #5E5257;
+  --kd-damasco: #FFF5EC; --kd-bege: #EDE5D6;
+
+  /* ---------- Tema: Claro ---------- */
+  --fundo-base: #F5F5ED;
+  --fundo-superficie: #FFFFFF;
+  --fundo-jornada: #FFF5EC;
+  --fundo-suave: #F1E1DE;
+  --texto-principal: #22161C;
+  --texto-apoio: #5E5257;
+  --texto-laranja: #C83A00;
+  --texto-link: #2F5BEA;
+  --borda-linha: #E2DFD4;
+  --acao-primaria: #FA4C03;
+  --progresso-barra: #2F5BEA;
+  --no-concluida: #2F5BEA;
+  --no-atual: #FA4C03;
+  --no-bloqueada: #E2DFD4;
+  --tecla-marcada: #2F5BEA;
+  --recompensa-ponto: #FA4C03;
+
+  /* ---------- Tipografia: Sora (Light 300 · Regular 400 · SemiBold 600 · Bold 700) ---------- */
+  --fonte: "Sora", system-ui, sans-serif;
+  /* tamanho/altura · peso · tracking */
+  --t-display: 600 28px/32px var(--fonte);     /* -1px   */
+  --t-metrica: 700 24px/28px var(--fonte);     /* -0.5px */
+  --t-titulo: 600 20px/28px var(--fonte);      /* -0.5px */
+  --t-titulo-s: 600 18px/24px var(--fonte);    /* -0.4px */
+  --t-botao: 600 15px/24px var(--fonte);
+  --t-corpo-l: 400 16px/24px var(--fonte);
+  --t-corpo: 400 14px/20px var(--fonte);
+  --t-corpo-forte: 600 14px/20px var(--fonte);
+  --t-rotulo: 400 12px/16px var(--fonte);
+  --t-legenda: 400 11px/16px var(--fonte);
+  --t-sobretitulo: 600 11px/16px var(--fonte); /* MAIÚSCULAS · 1px */
+
+  /* ---------- Espaço: grade de 4 pt ---------- */
+  --espaco-1: 4px; --espaco-2: 8px; --espaco-3: 12px; --espaco-4: 16px; --espaco-5: 20px;
+  --espaco-6: 24px; --espaco-8: 32px; --espaco-10: 40px; --espaco-12: 48px;
+  --gutter: 20px; /* 16px em telas ≤ 360 */
+
+  /* ---------- Raio ---------- */
+  --raio-s: 8px; --raio-m: 12px; --raio-l: 16px; --raio-xl: 20px; --raio-2xl: 24px; --raio-total: 999px;
+
+  /* ---------- Profundidade (nunca sombra borrada decorativa) ---------- */
+  --lateral-3d: 6px;                                   /* nós e teclas */
+  --aro: inset 0 0 0 3px #FFFFFF;                      /* cards de destaque */
+  --flutuante: 0 12px 32px rgba(34, 22, 28, .18);      /* só camadas sobrepostas */
+
+  /* ---------- Movimento ---------- */
+  --mov-afundar: 70ms;   --curva-afundar: ease-out;               /* :active */
+  --mov-cor: 160ms;      --curva-cor: ease-out;                   /* cor, opacidade, hover */
+  --mov-press: 240ms;    --curva-press: ease-out;                 /* marcar nó/tecla */
+  --mov-soltar: 220ms;   --curva-mola: cubic-bezier(.34, 1.56, .64, 1);
+  --mov-tela: 240ms;     --curva-tela: cubic-bezier(.23, 1, .32, 1);   /* desliza 24px */
+  --mov-capa: 520ms;     /* foto sobe 16px */
+}
+
+/* ---------- Tema: Escuro ---------- */
+[data-theme="dark"] {
+  --fundo-base: #22161C;
+  --fundo-superficie: #2E2127;
+  --fundo-jornada: #362722;
+  --fundo-suave: #3A1D20;
+  --texto-principal: #F5F5ED;
+  --texto-apoio: #C4B8BD;
+  --texto-laranja: #FF7A3D;
+  --texto-link: #CBE8FA;
+  --borda-linha: #46363E;
+  --acao-primaria: #FA4C03;
+  --progresso-barra: #6F8FF5;
+  --no-concluida: #2F5BEA;
+  --no-atual: #FA4C03;
+  --no-bloqueada: #46363E;
+  --tecla-marcada: #2F5BEA;
+  --recompensa-ponto: #FA4C03;
+  --aro: inset 0 0 0 3px rgba(245, 245, 237, .06);
+}
